@@ -1,13 +1,6 @@
-import javax.swing.SwingUtilities
-import javax.swing.UIManager
+package parkmate
 
 fun main() {
-
-    UIManager.setLookAndFeel(
-        UIManager.getSystemLookAndFeelClassName()
-    )
-
-    SwingUtilities.invokeLater {
-        ParkingApp().isVisible = true
-    }
+    val system = ParkMateSystem()
+    system.start()
 }
