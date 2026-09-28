@@ -1,0 +1,38 @@
+package parkmate
+
+class Manager(
+    userId: String,
+    name: String,
+    email: String,
+    phone: String,
+    password: String
+) : User(userId, name, email, phone, password) {
+
+    fun updateParkingStatus(parking: Parking, status: ParkingStatus) {
+        parking.setStatus(status)
+    }
+
+    fun generateReport(
+        parkingManager: ParkingManager,
+        reservations: List<Reservation>
+    ) {
+        val parkings = parkingManager.getAllParkings()
+        val totalCapacity = parkings.sumOf { it.capacity }
+        val available = parkings.sumOf { it.availableSlots() }
+        val occupied = parkings.sumOf { it.occupiedSlots() }
+
+        println()
+        println("============================================================")
+        println("PARKMATE SYSTEM REPORT")
+        println("============================================================")
+        println("Parking Areas       : ${parkings.size}")
+        println("Total Capacity      : $totalCapacity")
+        println("Available Slots     : $available")
+        println("Occupied Slots      : $occupied")
+        println("Total Reservations  : ${reservations.size}")
+        println("Confirmed           : ${reservations.count { it.status == ReservationStatus.CONFIRMED }}")
+        println("Completed           : ${reservations.count { it.status == ReservationStatus.COMPLETED }}")
+        println("Cancelled           : ${reservations.count { it.status == ReservationStatus.CANCELLED }}")
+        println("============================================================")
+    }
+}
