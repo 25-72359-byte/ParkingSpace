@@ -1,0 +1,266 @@
+Parking Space Locator & Manager
+System Scenarios and User Functions
+PARKING SPACE LOCATOR & MANAGER
+System Scenarios and User Functions
+ 
+ PARKING MANAGER / ADMIN
+Account & User Management
+ Logs in.
+ Logs out.
+ Creates a user account.
+ Searches for a user.
+ Views user information.
+ Edits user information.
+ Enables/disables a user account.
+ Changes a user's role.
+ Resets a user's password.
+ Views all registered users.
+Parking Area Management
+ Add a new parking area.
+ Assign a Parking Area ID.
+ Enter the parking area name and address.
+ Enter the parking area's latitude and longitude.
+ Specifies the total number of parking slots.
+ Edit parking area information.
+ Delete a parking area record.
+ View parking area details.
+ Search for a parking area.
+ Filter parking areas by location or availability.
+ Update parking area operating hours and parking fees.
+ Change the parking area's status.
+ View all registered parking areas.
+Parking Slot Management
+ Add a new parking slot.
+ Assign a Parking Slot ID.
+ Assign a slot to a parking area.
+ Specifies the slot type.
+ View all parking slots.
+ View available, occupied, reserved, and unavailable slots.
+ Update a parking slot's status.
+ Edit parking slot information.
+ Delete a parking slot record.
+ Search for a parking slot.
+ Filter slots by status or parking area.
+ Mark a slot as available, occupied, reserved, or unavailable for maintenance.
+ Monitor the number of available and occupied slots.
+Location & GIS Management
+ Open the parking area map.
+ Add a parking location to the map.
+ Update parking area coordinates.
+ View parking area markers.
+ Search for a parking location or nearby parking area.
+ View parking area details through a map marker.
+ View parking slot availability through a map marker.
+ Display parking locations within Poblacion 1–12.
+ View parking area boundaries when available.
+ Center the map on a selected parking location.
+ Correct invalid location coordinates.
+ Update parking location information.
+Reservation Management
+ View all parking reservations.
+ Search for a reservation.
+ View reservation details.
+ Confirm or rejects a reservation request.
+ Cancel a reservation.
+ Update reservation status.
+ Check parking slot availability before confirmation.
+ Assign a parking slot to a reservation.
+ View the user's reservation history.
+ Monitor active and expired reservations.
+ Prevent double booking of the same slot.
+ Record reservation dates and times.
+Reports & Records
+ View parking area, parking slot, and reservation records.
+ Search parking records.
+ Filter records by date, parking area, slot status, or reservation status.
+ View available and occupied slot summaries.
+ View reservation history.
+ View parking area updates and user activity records.
+ Generate parking availability reports.
+ Generate reservation reports.
+ 
+PARKING USER
+Account
+ Register a new account.
+ Log in and log out.
+ Update their profile.
+ Change or reset their password.
+ View their account information.
+Parking Location Search
+ Open the parking area map.
+ View available parking areas.
+ Search for a parking area by name or barangay.
+ Search for parking areas in Poblacion 1–12.
+ Search for nearby parking locations.
+ View the address, operating hours, and parking fees when provided.
+ View parking area details on the map.
+ View the total number of parking slots.
+ Check the number of available parking slots.
+ Check whether a parking area is full.
+ Select a parking marker to view details.
+Parking Slot Information
+ View available, occupied, reserved, and unavailable parking slots.
+ Check the current status of a parking slot.
+ View parking slot types.
+ Select an available parking area.
+ Check slot availability before making a reservation.
+Parking Reservation
+ Select a parking area.
+ Select an available parking slot, if slot selection is supported.
+ Enter the reservation date and expected arrival time.
+ Enter the expected departure time, if required.
+ Submit a reservation request.
+ View reservation details and status.
+ Receive confirmation of a successful reservation.
+ Cancel a reservation, subject to system rules.
+ View current and previous reservations.
+ Receive a message when a reservation cannot be completed.
+ Check whether a reserved slot is still available.
+Map & Navigation
+ Open the parking map.
+ View parking locations.
+ Search for a parking area.
+ Select a parking marker.
+ View the address and availability of a selected location.
+ Center the map on a selected parking area.
+ View parking locations by barangay.
+ Use displayed location information to find a parking area.
+ 
+PARKING ATTENDANT / PARKING STAFF (OPTIONAL)
+Account
+ Log in and logs out.
+ Update their profile.
+ Change their password.
+Parking Slot Monitoring
+ View assigned parking areas.
+ View parking slot information.
+ Check the current status of a parking slot.
+ Mark a parking slot as occupied, available, reserved, or unavailable.
+ Update slot status when a vehicle arrives or leaves.
+ Check the total available and occupied slots.
+ View parking area occupancy.
+ Report incorrect parking information.
+ View recent slot status updates.
+Reservation Assistance
+ Search for a reservation.
+ View reservation details.
+ Verifies a reservation reference, if implemented.
+ Checks the reserved parking area.
+ Confirms a vehicle's arrival.
+ Updates reservation status when authorized.
+ Reports a reservation problem to the manager.
+
+
+
+ 
+ SYSTEM-LEVEL SCENARIOS
+Authentication
+ Successful login.
+ Incorrect password.
+ Invalid account.
+ Disabled account.
+ User registration.
+ Duplicate username.
+ Duplicate email.
+ Password confirmation mismatch.
+ Password reset.
+ Logout.
+ Unauthorized access attempt.
+ Missing login information.
+User Management
+ Create user account.
+ View user account.
+ Edit user information.
+ Enable or disable user account.
+ Change user role.
+ Search for a user.
+ Reset user password.
+ Reject invalid user information.
+ Detect duplicate user information.
+ Prevent unauthorized account changes.
+Parking Area Management
+ Add, view, edit, or delete a parking area.
+ Search for a parking area.
+ Update parking area address or coordinates.
+ Update parking fees or operating hours.
+ Change parking area status.
+ Detect duplicate parking area records.
+ Reject incomplete parking area information.
+ Prevent deletion when active reservations require the record, according to system rules.
+
+Parking Slot Management
+ Add, view, edit, or delete a parking slot.
+ Assign a slot to a parking area.
+ Update parking slot status.
+ Mark a slot as available, occupied, reserved, or unavailable.
+ Detect duplicate parking slot IDs.
+ Reject invalid slot information.
+ Prevent overlapping reservations for the same slot.
+ Update the available slot count.
+ Prevent the available slot count from becoming negative.
+Reservation Management
+ Submit, view, confirm, reject, or cancel a reservation.
+ Update reservation status.
+ Retrieve reservation history.
+ Check slot availability.
+ Detect duplicate or overlapping reservations.
+ Prevent reservation of an occupied or unavailable slot.
+ Prevent reservation when the parking area is full.
+ Release a slot after cancellation, when applicable.
+ Mark a reservation as completed.
+ Handle expired reservations.
+ Reject reservations with invalid dates or times.
+GIS / Location Management
+ Add, view, edit, or delete a parking location.
+ Search for a parking location.
+ Display parking markers.
+ Display parking areas by barangay.
+ View parking area details on the map.
+ Center the map on a selected parking location.
+ Reject invalid coordinates.
+ Handle missing location data.
+ Handle map loading failure.
+ Handle parking markers that fail to load.
+ Display a message when location services are unavailable.
+ Display availability information associated with a selected marker.
+Map / Location Scenarios
+ Map loads successfully or fails to load.
+ Parking area markers load successfully or fail to load.
+ User selects a parking marker.
+ User searches for a location.
+ Map centers on the selected location.
+ Location data is unavailable.
+ Invalid latitude or longitude.
+ Parking information is outdated.
+ No parking areas match the search.
+No parking areas are available nearby.
+ Map displays parking locations in Poblacion 1–12.
+ The selected marker displays the correct parking area information.
+Reports & Records
+ Save, retrieve, update, or delete parking area records.
+ Save, retrieve, update, or delete parking slot records.
+ Save, retrieve, or update reservation records.
+ Search records.
+ Filter records by date, parking area, slot status, or reservation status.
+ View reservation history.
+ Generate parking availability reports.
+ Generate reservation reports.
+ Record changes made by authorized users.
+Backend / Database
+ Data successfully saved.
+ Data successfully retrieved.
+ Data successfully updated.
+ Data successfully deleted.
+ Internet unavailable.
+ Database request fails.
+ Authentication request fails.
+ Data synchronization.
+ Duplicate data detected.
+ Required information is missing.
+ Invalid data format submitted.
+ Database connection is restored.
+ Changes are not saved because of a connection failure.
+ System prevents incomplete updates from being treated as successful.
+ Parking availability information is refreshed after a successful update.
+ 
+
